@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickVault - Personal Notes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Auth Section (Login / Register) -->
+    <div id="auth-section" class="card">
+      <h2>🔒 QuickVault</h2>
+      <p class="subtitle">Enter your credentials to access your private vault</p>
+      
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      
+      <div class="btn-group">
+        <button onclick="handleAuth('login')" class="btn primary">Login</button>
+        <button onclick="handleAuth('register')" class="btn secondary">Register</button>
+      </div>
+      <p id="auth-msg" class="msg"></p>
+    </div>
+
+    <!-- Dashboard Section (Hidden until logged in) -->
+    <div id="dashboard-section" class="card hidden">
+      <div class="header">
+        <h2>Welcome, <span id="user-display"></span> 👋</h2>
+        <button onclick="logout()" class="btn logout-btn">Logout</button>
+      </div>
+
+      <div class="note-input">
+        <textarea id="note-text" placeholder="Write a secret note or snippet..."></textarea>
+        <button onclick="addNote()" class="btn primary">Save Note</button>
+      </div>
+
+      <h3>Your Saved Notes</h3>
+      <ul id="notes-list"></ul>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
